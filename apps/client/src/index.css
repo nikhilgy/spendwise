@@ -1,0 +1,105 @@
+@import url('https://fonts.googleapis.com/css2?family=Prompt:wght@400;500;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Dzen Design System Tokens */
+  --dzen-font-family-primary: 'Prompt', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  --dzen-font-weight-regular: 400;
+  --dzen-font-weight-medium: 500;
+  --dzen-font-weight-bold: 700;
+  --dzen-base-spacing: 4px;
+  --dzen-radius-xs: 4px;
+  --dzen-radius-sm: 8px;
+  --dzen-radius-md: 12px;
+  --dzen-radius-lg: 16px;
+  --dzen-radius-full: 9999px;
+  /* Palette */
+  --dzen-black: #000000;
+  --dzen-red: #EA4242;
+  --dzen-offWhite: #F6F4F1;
+  --dzen-white: #FFFFFF;
+  --dzen-gray900: #1A1A1A;
+  --dzen-gray700: #4B4B4B;
+  --dzen-gray500: #8E8E8E;
+  --dzen-gray300: #D6D6D6;
+  --dzen-gray200: #E6E6E6;
+  --dzen-gray100: #F2F2F2;
+  /* States */
+  --dzen-success: #4ECD6F;
+  --dzen-warning: #FFC857;
+  --dzen-error: #EA4242;
+  --dzen-disabled-bg: #F2F2F2;
+  --dzen-disabled-fg: #B8B8B8;
+  --dzen-focus-ring: #EA4242;
+  /* Shadows */
+  --dzen-shadow-card: 0 2px 8px rgba(0,0,0,0.06);
+  --dzen-shadow-hover: 0 4px 12px rgba(0,0,0,0.10);
+  --dzen-shadow-popover: 0 12px 24px rgba(0,0,0,0.14);
+}
+
+/* Token Bridge: legacy → Dzen */
+body {
+  font-family: var(--dzen-font-family-primary);
+  letter-spacing: -0.15px;
+  line-height: 1.4;
+  background: var(--dzen-offWhite);
+  color: var(--dzen-gray900);
+}
+
+.bg-neutral-000 { background: var(--dzen-white) !important; }
+.bg-neutral-050 { background: var(--dzen-offWhite) !important; }
+.bg-neutral-100 { background: var(--dzen-gray100) !important; }
+.bg-neutral-200 { background: var(--dzen-gray200) !important; }
+.bg-neutral-300 { background: var(--dzen-gray300) !important; }
+.bg-neutral-400 { background: var(--dzen-gray500) !important; }
+.bg-neutral-900, .bg-navy { background: var(--dzen-black) !important; }
+.text-neutral-000 { color: var(--dzen-white) !important; }
+.text-neutral-100 { color: var(--dzen-gray100) !important; }
+.text-neutral-200 { color: var(--dzen-gray200) !important; }
+.text-neutral-300 { color: var(--dzen-gray300) !important; }
+.text-neutral-400 { color: var(--dzen-gray500) !important; }
+.text-neutral-500 { color: var(--dzen-gray700) !important; }
+.text-neutral-900, .text-navy { color: var(--dzen-black) !important; }
+.text-error-red { color: var(--dzen-error) !important; }
+.text-teal { color: var(--dzen-red) !important; }
+.rounded-lg { border-radius: var(--dzen-radius-lg) !important; }
+.rounded-md { border-radius: var(--dzen-radius-md) !important; }
+.rounded-sm { border-radius: var(--dzen-radius-sm) !important; }
+.rounded-full, .rounded-pill { border-radius: var(--dzen-radius-full) !important; }
+.shadow-card { box-shadow: var(--dzen-shadow-card) !important; }
+.shadow-hover { box-shadow: var(--dzen-shadow-hover) !important; }
+.shadow-popover { box-shadow: var(--dzen-shadow-popover) !important; }
+
+/* Custom scrollbar for webkit browsers */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--dzen-gray100);
+  border-radius: var(--dzen-radius-full);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--dzen-gray500);
+  border-radius: var(--dzen-radius-full);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--dzen-gray700);
+}
+
+/* Add a subtle transition for color scheme changes */
+body, .bg-neutral-050, .bg-neutral-000 {
+  transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+}
+
+/* Focus ring as per design */
+*:focus-visible {
+  outline: 2px solid var(--dzen-focus-ring);
+  outline-offset: 2px;
+} 
